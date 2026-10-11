@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6ec">
+  <meta name="description" content="Take a little screen break. Choose an outdoor activity, set a timer, and touch grass.">
+  <title>Touch Grass — Step away. Step outside.</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Touch Grass home"><span class="brand-icon" aria-hidden="true">✿</span> touch grass<span class="brand-dot">.</span></a>
+    <span class="top-note"><span class="status-dot" aria-hidden="true"></span> Your little nudge to go outside</span>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A SMALL BREAK. A BIG BREATH.</p>
+        <h1 id="hero-title">The world is<br><em>waiting outside.</em></h1>
+        <p class="hero-description">Put the scroll on pause. Find a patch of sunshine, notice something growing, and give yourself a little room to breathe.</p>
+        <a class="text-link" href="#planner">Find your outside moment <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a sunny green hill with flowers" role="img">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="hill hill-back"></div><div class="hill hill-front"></div>
+        <span class="flower flower-one">✿</span><span class="flower flower-two">✿</span><span class="flower flower-three">✿</span>
+        <span class="art-caption">there's magic in the ordinary</span>
+      </div>
+    </section>
+
+    <section class="planner panel" id="planner" aria-labelledby="planner-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR OUTDOOR RESET</p><h2 id="planner-title">What's your little plan?</h2></div>
+        <span class="step-label">01 / MAKE IT YOURS</span>
+      </div>
+      <fieldset class="time-fieldset">
+        <legend>How much time have you got?</legend>
+        <div class="time-options" role="group" aria-label="Choose duration">
+          <button class="time-option" data-minutes="5" aria-pressed="false">5 <small>min</small></button>
+          <button class="time-option" data-minutes="10" aria-pressed="false">10 <small>min</small></button>
+          <button class="time-option selected" data-minutes="15" aria-pressed="true">15 <small>min</small></button>
+          <button class="time-option" data-minutes="30" aria-pressed="false">30 <small>min</small></button>
+          <button class="time-option" data-minutes="60" aria-pressed="false">60 <small>min</small></button>
+        </div>
+      </fieldset>
+
+      <div class="activity-heading"><h3>What sounds good?</h3><span>Pick one to begin</span></div>
+      <div class="activity-grid" role="group" aria-label="Choose an activity">
+        <button class="activity-card selected" data-activity="Gardening" aria-pressed="true"><span class="activity-emoji" aria-hidden="true">🪴</span><span class="activity-name">Gardening</span><span class="activity-desc">Get your hands in the soil</span></button>
+        <button class="activity-card" data-activity="Walking" aria-pressed="false"><span class="activity-emoji" aria-hidden="true">🚶</span><span class="activity-name">Walking</span><span class="activity-desc">Take the scenic route</span></button>
+        <button class="activity-card" data-activity="Bird watching" aria-pressed="false"><span class="activity-emoji" aria-hidden="true">🐦</span><span class="activity-name">Bird watching</span><span class="activity-desc">Listen for little songs</span></button>
+        <button class="activity-card" data-activity="Plant spotting" aria-pressed="false"><span class="activity-emoji" aria-hidden="true">🌿</span><span class="activity-name">Plant spotting</span><span class="activity-desc">Meet your leafy neighbours</span></button>
+        <button class="activity-card" data-activity="Cloud watching" aria-pressed="false"><span class="activity-emoji" aria-hidden="true">☁️</span><span class="activity-name">Cloud watching</span><span class="activity-desc">Let your mind wander</span></button>
+        <button class="activity-card surprise-card" data-activity="Surprise me" aria-pressed="false"><span class="activity-emoji" aria-hidden="true">🎲</span><span class="activity-name">Surprise me!</span><span class="activity-desc">A tiny adventure awaits</span></button>
+      </div>
+      <button class="primary-button" id="start-button">Let's go outside <span aria-hidden="true">↗</span></button>
+      <p class="privacy-note">No account. No tracking. Just you and the outside world.</p>
+    </section>
+
+    <section class="timer-panel panel hidden" id="timer-panel" aria-live="polite" aria-labelledby="timer-title">
+      <div class="timer-topline"><span class="timer-kicker">YOUR OUTSIDE MOMENT</span><button class="quiet-button" id="change-plan">Change plan</button></div>
+      <div class="timer-content"><span class="timer-emoji" id="timer-emoji" aria-hidden="true">🪴</span><h2 id="timer-title">Time to get growing.</h2><p id="mission-text" class="mission-text">Water a plant or gently clear away a few weeds.</p>
+        <div class="countdown" id="countdown" role="timer" aria-label="Time remaining">15:00</div>
+        <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+        <p class="timer-status" id="timer-status">Ready when you are.</p>
+        <div class="timer-controls"><button class="primary-button" id="toggle-button">Start timer <span aria-hidden="true">▶</span></button><button class="secondary-button" id="reset-button">Reset</button></div>
+      </div>
+      <p class="privacy-note">Keep it safe, take your time, and enjoy the moment.</p>
+    </section>
+
+    <section class="completion-panel panel hidden" id="completion-panel" aria-live="polite">
+      <div class="completion-sparkle" aria-hidden="true">✿</div><p class="eyebrow">YOU DID A GOOD THING</p><h2>Look at you, out there. 🌱</h2><p id="completion-message">You made a little space for the world beyond your screen.</p><button class="primary-button" id="again-button">Plan another little adventure <span aria-hidden="true">↗</span></button>
+    </section>
+
+    <footer class="footer"><span>Made for fresh air and fresh starts <span aria-hidden="true">✿</span></span><span>Touch Grass · An open-source community project</span></footer>
+  </main>
+</body>
+</html>
